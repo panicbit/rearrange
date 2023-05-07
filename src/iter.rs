@@ -5,7 +5,6 @@ use crate::{Order, Rearrange};
 pub trait RearrangeIter<T> {
     fn rearranged<F>(self, f: F) -> Iter<T>
     where
-        T: Ord,
         F: for<'x> FnMut(Order<'x, T>) -> Order<'x, T>;
 }
 
@@ -15,7 +14,6 @@ where
 {
     fn rearranged<F>(self, f: F) -> Iter<T>
     where
-        T: Ord,
         F: for<'x> FnMut(Order<'x, T>) -> Order<'x, T>,
     {
         let mut items = self.collect::<Vec<_>>();
