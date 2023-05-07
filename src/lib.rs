@@ -13,7 +13,7 @@ pub struct Order<'x, T> {
 }
 
 impl<'x, T> Order<'x, T> {
-    fn new(a: &'x T, b: &'x T) -> Self {
+    pub fn new(a: &'x T, b: &'x T) -> Self {
         Self {
             a,
             b,
